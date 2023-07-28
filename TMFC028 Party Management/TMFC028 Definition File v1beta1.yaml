@@ -64,7 +64,7 @@ coreFunction:
             - POST
             - PATCH/id
             - DELETE/id
-    - name: CustomerManagement
+    - name: Customer
       id: TMF629
       isRequired: 'no'
       version: 4
@@ -98,7 +98,7 @@ coreFunction:
         /{{.Release.Name}}-{{.Values.component.type}}/tmf-api/ProcessFlowManagement/v4/docs
       port: 8080
       resources:
-        - processFloe:
+        - processFlow:
             - GET
             - GET/id
             - POST
@@ -124,9 +124,6 @@ coreFunction:
         - event:
             - GET
             - GET /id
-            - POST
-            - PATCH
-            - DELETE
   dependantAPIs:
     - name: UserRolesandPermissions
       id: TMF672
@@ -144,7 +141,7 @@ coreFunction:
             - GET/id
     - name: PartyRoleManagement
       id: TMF669
-      isRequired: 'yes'
+      isRequired: 'no'
       version: 4
       specification: >-
         https://github.com/tmforum-apis/TMF669-PartyRoleManagement/blob/master/TMF669-PartyRoleManagement-v4.0.0.swagger.json
@@ -183,12 +180,12 @@ coreFunction:
             https://github.com/tmforum-apis/TMF675-GeographicLocationManagement/blob/master/TMF675-GeographicLocationManagement-v4.0.0.swagger.json
           apitype: openapi
           resources: null
-        - GeographicLocation:
+        - GeographicSite:
             - GET
             - GET /id
     - name: ProcessFlowManagement
       id: TMF701
-      isRequired: not
+      isRequired: 'no'
       version: 4
       specification: >-
         ttps://raw.githubusercontent.com/tmforum-apis/TMF701_ProcessFlow/master/TMF701-ProcessFlow-v4.0.0.swagger.json
@@ -205,7 +202,7 @@ coreFunction:
             - GET /id
     - name: Event
       id: TMF688
-      isRequired: not
+      isRequired: 'no'
       version: 4
       specification: >-
         https://github.com/tmforum-apis/TMF688-Event/blob/master/TMF688-Event-v4.0.0.swagger.json
